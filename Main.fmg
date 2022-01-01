@@ -1,0 +1,39 @@
+*HMGS-MINIGUI-IDE Two-Way Form Designer Generated Code
+*OPEN SOURCE PROJECT 2005-2015 Walter Formigoni http://sourceforge.net/projects/hmgs-minigui/
+
+DEFINE WINDOW TEMPLATE AT 90 , 743 WIDTH 1522 HEIGHT 1064 MAIN
+
+  DEFINE TAB Tab_1 AT 100,110 WIDTH 1200 HEIGHT 800 VALUE 1 FONT 'Arial' SIZE 9 TOOLTIP '' ON CHANGE NIL
+
+    PAGE 'Page 1'
+
+        DEFINE BROWSE J_Browse
+               ROW    100
+               COL    60
+               WIDTH  1091
+               HEIGHT 639
+               HEADERS {'DATE','DISCRIP','GAS','MAINT','JOHN','PASTOR','MED','SCHOOL','MISC','TOTAL'}
+               WIDTHS {120,250,80,80,80,90,80,90,80,90}
+               FIELDS {'JOHNACCT->DATE','JOHNACCT->DISCRIP','JOHNACCT->GAS','JOHNACCT->MAINT','JOHNACCT->JOHN','JOHNACCT->PASTOR','JOHNACCT->MED','JOHNACCT->SCHOOL','JOHNACCT->MISC','JOHNACCT->TOTAL'}
+               WORKAREA JOHNACCT
+               ALLOWEDIT .T.
+               ALLOWAPPEND .T.
+               PAINTDOUBLEBUFFER .F.
+               ALLOWDELETE .T.
+               BACKCOLOR {128,128,255}
+               FONTCOLOR {255,255,255}
+               JUSTIFY ajustify
+
+        END BROWSE  
+
+    END PAGE 
+
+    PAGE 'Page 2'
+
+    END PAGE 
+
+  END TAB 
+
+END WINDOW
+
+
