@@ -100,8 +100,252 @@ FUNCTION mainWin()
             FOOTER {||getTotal("total")} ;
             NOHILITE MOVE DT_MOVE_RIGHT
 
-         END TBROWSE  
-   END WINDOW
+      END TBROWSE  
+
+// Input lables
+      DEFINE LABEL Label_Date
+            ROW    620
+            COL    90
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Date:"
+            RIGHTALIGN .T.
+      END LABEL  
+
+   DEFINE LABEL Label_Disc
+            ROW    660
+            COL    90
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Description:"
+            RIGHTALIGN .T.
+      END LABEL  
+
+   DEFINE LABEL Label_Gas
+            ROW    700
+            COL    90
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Gas:"
+            RIGHTALIGN .T.
+      END LABEL  
+
+   DEFINE LABEL Label_Maint
+            ROW    740
+            COL    90
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Maintenance:"
+            RIGHTALIGN .T.
+      END LABEL  
+
+   DEFINE LABEL Label_John
+            ROW    780
+            COL    90
+            WIDTH  120
+            HEIGHT 24
+            VALUE "John:"
+            RIGHTALIGN .T.
+      END LABEL  
+
+   DEFINE LABEL Label_Pastor
+            ROW    820
+            COL    90
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Pastor:"
+            RIGHTALIGN .T.
+      END LABEL  
+
+   DEFINE LABEL Label_Med
+            ROW    860
+            COL    90
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Medical:"
+            RIGHTALIGN .T.
+      END LABEL  
+
+   DEFINE LABEL Label_School
+            ROW    900
+            COL    90
+            WIDTH  120
+            HEIGHT 24
+            VALUE "School:"
+            RIGHTALIGN .T.
+      END LABEL  
+
+   DEFINE LABEL Label_Misc
+            ROW    940
+            COL    90
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Miscellaneous:"
+            RIGHTALIGN .T.
+      END LABEL  
+
+   DEFINE LABEL Label_Total
+            ROW    980
+            COL    90
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Total:"
+            RIGHTALIGN .T.
+      END LABEL  
+
+   //get boxes
+   DEFINE GETBOX GetBox_1
+            ROW    620
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+   END GETBOX  
+
+   DEFINE GETBOX GetBox_2
+            ROW    660
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+   END GETBOX  
+
+   DEFINE GETBOX GetBox_3
+            ROW    700
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+   END GETBOX  
+
+   DEFINE GETBOX GetBox_4
+            ROW    740
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+   END GETBOX  
+
+   DEFINE GETBOX GetBox_5
+            ROW    780
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+   END GETBOX  
+
+   DEFINE GETBOX GetBox_6
+            ROW    820
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+   END GETBOX  
+
+   DEFINE GETBOX GetBox_7
+            ROW    860
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+   END GETBOX  
+
+   DEFINE GETBOX GetBox_8
+            ROW    900
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+   END GETBOX  
+
+   DEFINE GETBOX GetBox_9
+            ROW    940
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+   END GETBOX  
+
+   DEFINE GETBOX GetBox_10
+            ROW    980
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+   END GETBOX  
+   
+   DEFINE FRAME Frame_1
+      ROW    610
+      COL    110
+      WIDTH  250
+      HEIGHT 400
+      FONTNAME 'Arial'
+      FONTBOLD .T.
+      BACKCOLOR {0,0,0}
+      OPAQUE .T.
+   END FRAME  
+
+END WINDOW
 
 
 RETURN( NIL )

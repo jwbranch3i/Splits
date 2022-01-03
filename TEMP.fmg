@@ -3,89 +3,98 @@
 
 DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
 
-     DEFINE LABEL Label_1
-            ROW    530
-            COL    30
-            WIDTH  120
-            HEIGHT 24
-            VALUE "Label_1"
-     END LABEL  
-
-     DEFINE LABEL Label_2
-            ROW    570
-            COL    30
-            WIDTH  120
-            HEIGHT 24
-            VALUE "Label_2"
-     END LABEL  
-
-     DEFINE LABEL Label_3
+     DEFINE LABEL Label_Date
             ROW    620
-            COL    30
+            COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Label_3"
+            VALUE "Date:"
+            RIGHTALIGN .T.
      END LABEL  
 
-     DEFINE LABEL Label_4
-            ROW    650
-            COL    30
+     DEFINE LABEL Label_Disc
+            ROW    660
+            COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Label_4"
+            VALUE "Description:"
+            RIGHTALIGN .T.
      END LABEL  
 
-     DEFINE LABEL Label_5
+     DEFINE LABEL Label_Gas
             ROW    700
-            COL    30
+            COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Label_5"
+            VALUE "Gas:"
+            RIGHTALIGN .T.
      END LABEL  
 
-     DEFINE LABEL Label_6
+     DEFINE LABEL Label_Maint
             ROW    740
-            COL    30
+            COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Label_6"
+            VALUE "Maintenance:"
+            RIGHTALIGN .T.
      END LABEL  
 
-     DEFINE LABEL Label_7
+     DEFINE LABEL Label_John
             ROW    780
-            COL    30
+            COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Label_7"
+            VALUE "John:"
+            RIGHTALIGN .T.
      END LABEL  
 
-     DEFINE LABEL Label_8
+     DEFINE LABEL Label_Pastor
             ROW    820
-            COL    30
+            COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Label_8"
+            VALUE "Pastor:"
+            RIGHTALIGN .T.
      END LABEL  
 
-     DEFINE LABEL Label_9
+     DEFINE LABEL Label_Med
             ROW    860
-            COL    30
+            COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Label_9"
+            VALUE "Medical:"
+            RIGHTALIGN .T.
      END LABEL  
 
-     DEFINE LABEL Label_10
+     DEFINE LABEL Label_School
             ROW    900
-            COL    30
+            COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Label_10"
+            VALUE "School:"
+            RIGHTALIGN .T.
      END LABEL  
 
+     DEFINE LABEL Label_Misc
+            ROW    940
+            COL    90
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Miscellaneous:"
+            RIGHTALIGN .T.
+     END LABEL  
+
+     DEFINE LABEL Label_Total
+            ROW    980
+            COL    90
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Total:"
+            RIGHTALIGN .T.
+     END LABEL  
 
      DEFINE GETBOX GetBox_1
-            ROW    530
+            ROW    620
             COL    220
             WIDTH  120
             HEIGHT 24
@@ -99,7 +108,7 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
      END GETBOX  
 
      DEFINE GETBOX GetBox_2
-            ROW    570
+            ROW    660
             COL    220
             WIDTH  120
             HEIGHT 24
@@ -113,7 +122,7 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
      END GETBOX  
 
      DEFINE GETBOX GetBox_3
-            ROW    620
+            ROW    700
             COL    220
             WIDTH  120
             HEIGHT 24
@@ -127,34 +136,6 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
      END GETBOX  
 
      DEFINE GETBOX GetBox_4
-            ROW    650
-            COL    220
-            WIDTH  120
-            HEIGHT 24
-            VALUE 0
-            IMAGE ''
-            PICTURE ''
-            VALIDMESSAGE ''
-            MESSAGE ''
-            FONTNAME 'Arial'
-            TOOLTIP ''
-     END GETBOX  
-
-     DEFINE GETBOX GetBox_5
-            ROW    690
-            COL    220
-            WIDTH  120
-            HEIGHT 24
-            VALUE 0
-            IMAGE ''
-            PICTURE ''
-            VALIDMESSAGE ''
-            MESSAGE ''
-            FONTNAME 'Arial'
-            TOOLTIP ''
-     END GETBOX  
-
-     DEFINE GETBOX GetBox_6
             ROW    740
             COL    220
             WIDTH  120
@@ -168,8 +149,8 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             TOOLTIP ''
      END GETBOX  
 
-     DEFINE GETBOX GetBox_7
-            ROW    790
+     DEFINE GETBOX GetBox_5
+            ROW    780
             COL    220
             WIDTH  120
             HEIGHT 24
@@ -182,7 +163,7 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             TOOLTIP ''
      END GETBOX  
 
-     DEFINE GETBOX GetBox_8
+     DEFINE GETBOX GetBox_6
             ROW    820
             COL    220
             WIDTH  120
@@ -196,7 +177,7 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             TOOLTIP ''
      END GETBOX  
 
-     DEFINE GETBOX GetBox_9
+     DEFINE GETBOX GetBox_7
             ROW    860
             COL    220
             WIDTH  120
@@ -210,7 +191,7 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             TOOLTIP ''
      END GETBOX  
 
-     DEFINE GETBOX GetBox_10
+     DEFINE GETBOX GetBox_8
             ROW    900
             COL    220
             WIDTH  120
@@ -223,6 +204,45 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             FONTNAME 'Arial'
             TOOLTIP ''
      END GETBOX  
+
+     DEFINE GETBOX GetBox_9
+            ROW    940
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+     END GETBOX  
+
+     DEFINE GETBOX GetBox_10
+            ROW    980
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+     END GETBOX  
+
+     DEFINE FRAME Frame_1
+            ROW    590
+            COL    70
+            WIDTH  292
+            HEIGHT 432
+            FONTNAME 'Arial'
+            FONTBOLD .T.
+            BACKCOLOR {0,0,0}
+            OPAQUE .T.
+     END FRAME  
 
 END WINDOW
 
