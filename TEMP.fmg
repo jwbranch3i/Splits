@@ -1,0 +1,229 @@
+*HMGS-MINIGUI-IDE Two-Way Form Designer Generated Code
+*OPEN SOURCE PROJECT 2005-2015 Walter Formigoni http://sourceforge.net/projects/hmgs-minigui/
+
+DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
+
+     DEFINE LABEL Label_1
+            ROW    530
+            COL    30
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Label_1"
+     END LABEL  
+
+     DEFINE LABEL Label_2
+            ROW    570
+            COL    30
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Label_2"
+     END LABEL  
+
+     DEFINE LABEL Label_3
+            ROW    620
+            COL    30
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Label_3"
+     END LABEL  
+
+     DEFINE LABEL Label_4
+            ROW    650
+            COL    30
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Label_4"
+     END LABEL  
+
+     DEFINE LABEL Label_5
+            ROW    700
+            COL    30
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Label_5"
+     END LABEL  
+
+     DEFINE LABEL Label_6
+            ROW    740
+            COL    30
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Label_6"
+     END LABEL  
+
+     DEFINE LABEL Label_7
+            ROW    780
+            COL    30
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Label_7"
+     END LABEL  
+
+     DEFINE LABEL Label_8
+            ROW    820
+            COL    30
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Label_8"
+     END LABEL  
+
+     DEFINE LABEL Label_9
+            ROW    860
+            COL    30
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Label_9"
+     END LABEL  
+
+     DEFINE LABEL Label_10
+            ROW    900
+            COL    30
+            WIDTH  120
+            HEIGHT 24
+            VALUE "Label_10"
+     END LABEL  
+
+
+     DEFINE GETBOX GetBox_1
+            ROW    530
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+     END GETBOX  
+
+     DEFINE GETBOX GetBox_2
+            ROW    570
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+     END GETBOX  
+
+     DEFINE GETBOX GetBox_3
+            ROW    620
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+     END GETBOX  
+
+     DEFINE GETBOX GetBox_4
+            ROW    650
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+     END GETBOX  
+
+     DEFINE GETBOX GetBox_5
+            ROW    690
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+     END GETBOX  
+
+     DEFINE GETBOX GetBox_6
+            ROW    740
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+     END GETBOX  
+
+     DEFINE GETBOX GetBox_7
+            ROW    790
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+     END GETBOX  
+
+     DEFINE GETBOX GetBox_8
+            ROW    820
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+     END GETBOX  
+
+     DEFINE GETBOX GetBox_9
+            ROW    860
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+     END GETBOX  
+
+     DEFINE GETBOX GetBox_10
+            ROW    900
+            COL    220
+            WIDTH  120
+            HEIGHT 24
+            VALUE 0
+            IMAGE ''
+            PICTURE ''
+            VALIDMESSAGE ''
+            MESSAGE ''
+            FONTNAME 'Arial'
+            TOOLTIP ''
+     END GETBOX  
+
+END WINDOW
+
+

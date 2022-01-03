@@ -9,27 +9,29 @@ FUNCTION mainWin()
       TITLE "John Account Splits" ;
       MAIN
    
-      DEFINE TBROWSE oBrowse AT 100, 60 GRID ALIAS "JOHNACCT" ;
-         ON CHANGE rowTotal() APPEND;
-         WIDTH 1241 HEIGHT 639 
+      DEFINE TBROWSE oBrowse AT 200, 60 CELLED ALIAS "JOHNACCT" ;
+         ON CHANGE rowTotal() ;
+         EDITABLE WIDTH 1000 HEIGHT 390
+
+         //oBrowse:SetAppendMode(TRUE)
 
          ADD COLUMN TO oBrowse;
             HEADER "Date" ;
-            SIZE 120 ;
+            SIZE 80 ;
             DATA FIELDWBLOCK("date", SELECT()) ;
             ALIGN DT_CENTER, DT_CENTER, DT_CENTER ;
             EDITABLE MOVE DT_MOVE_RIGHT
 
          ADD COLUMN TO oBrowse;
             HEADER "Description" ;
-            SIZE 120 ;
+            SIZE 250 ;
             DATA FIELDWBLOCK("discrip", SELECT()) ;
             ALIGN DT_LEFT, DT_CENTER, DT_CENTER ;
             EDITABLE MOVE DT_MOVE_RIGHT
 
          ADD COLUMN TO oBrowse;
             HEADER "Gas" ;
-            SIZE 120 ;
+            SIZE 80 ;
             POSTEDIT {||rowTotal()} ;
             DATA FIELDWBLOCK("gas", SELECT()) ;
             ALIGN DT_RIGHT, DT_CENTER, DT_CENTER ;
@@ -38,7 +40,7 @@ FUNCTION mainWin()
 
          ADD COLUMN TO oBrowse;
             HEADER "Maintenance" ;
-            SIZE 120 ;
+            SIZE 80 ;
             POSTEDIT {||rowTotal()} ;
             DATA FIELDWBLOCK("maint", SELECT()) ;
             ALIGN DT_RIGHT, DT_CENTER, DT_CENTER ;
@@ -47,7 +49,7 @@ FUNCTION mainWin()
 
          ADD COLUMN TO oBrowse;
             HEADER "John" ;
-            SIZE 120 ;
+            SIZE 80 ;
             POSTEDIT {||rowTotal()} ;
             DATA FIELDWBLOCK("john", SELECT()) ;
             ALIGN DT_RIGHT, DT_CENTER, DT_CENTER ;
@@ -56,7 +58,7 @@ FUNCTION mainWin()
 
          ADD COLUMN TO oBrowse;
             HEADER "Pastor" ;
-            SIZE 120 ;
+            SIZE 80 ;
             POSTEDIT {||rowTotal()} ;
             DATA FIELDWBLOCK("pastor", SELECT()) ;
             ALIGN DT_RIGHT, DT_CENTER, DT_CENTER ;
@@ -65,7 +67,7 @@ FUNCTION mainWin()
 
          ADD COLUMN TO oBrowse;
             HEADER "Medical" ;
-            SIZE 120 ;
+            SIZE 80 ;
             POSTEDIT {||rowTotal()} ;
             DATA FIELDWBLOCK("med", SELECT()) ;
             ALIGN DT_RIGHT, DT_CENTER, DT_CENTER ;
@@ -74,7 +76,7 @@ FUNCTION mainWin()
 
          ADD COLUMN TO oBrowse;
             HEADER "School" ;
-            SIZE 120 ;
+            SIZE 80 ;
             POSTEDIT {||rowTotal()} ;
             DATA FIELDWBLOCK("school", SELECT()) ;
             ALIGN DT_RIGHT, DT_CENTER, DT_CENTER ;
@@ -83,7 +85,7 @@ FUNCTION mainWin()
 
          ADD COLUMN TO oBrowse;
             HEADER "Miscellaneous" ;
-            SIZE 120 ;
+            SIZE 80 ;
             POSTEDIT {||rowTotal()} ;
             DATA FIELDWBLOCK("misc", SELECT()) ;
             ALIGN DT_RIGHT, DT_CENTER, DT_CENTER ;
@@ -92,11 +94,11 @@ FUNCTION mainWin()
 
          ADD COLUMN TO oBrowse;
             HEADER "Total" ;
-            SIZE 120 ;
+            SIZE 80 ;
             DATA FIELDWBLOCK("total", SELECT()) ;
             ALIGN DT_RIGHT, DT_CENTER, DT_CENTER ;
             FOOTER {||getTotal("total")} ;
-            NOBAR MOVE DT_MOVE_RIGHT
+            NOHILITE MOVE DT_MOVE_RIGHT
 
          END TBROWSE  
    END WINDOW

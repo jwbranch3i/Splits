@@ -9,6 +9,7 @@
 FUNCTION Main
 
    SET BROWSESYNC ON
+   SET CENTURY ON
    USE JOHNACCT
 
    mainWin()
