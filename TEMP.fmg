@@ -1,14 +1,14 @@
 *HMGS-MINIGUI-IDE Two-Way Form Designer Generated Code
 *OPEN SOURCE PROJECT 2005-2015 Walter Formigoni http://sourceforge.net/projects/hmgs-minigui/
 
-DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
+DEFINE WINDOW TEMPLATE AT 137 , 1283 WIDTH 600 HEIGHT 1066 BACKCOLOR {128,255,255}
 
      DEFINE LABEL Label_Date
             ROW    620
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Date:"
+            VALUE "Date: "
             RIGHTALIGN .T.
      END LABEL  
 
@@ -17,7 +17,7 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Description:"
+            VALUE "Description: "
             RIGHTALIGN .T.
      END LABEL  
 
@@ -26,7 +26,7 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Gas:"
+            VALUE "Gas: "
             RIGHTALIGN .T.
      END LABEL  
 
@@ -35,7 +35,7 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Maintenance:"
+            VALUE "Maintenance: "
             RIGHTALIGN .T.
      END LABEL  
 
@@ -44,7 +44,7 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "John:"
+            VALUE "John: "
             RIGHTALIGN .T.
      END LABEL  
 
@@ -53,7 +53,7 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Pastor:"
+            VALUE "Pastor: "
             RIGHTALIGN .T.
      END LABEL  
 
@@ -62,7 +62,7 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Medical:"
+            VALUE "Medical: "
             RIGHTALIGN .T.
      END LABEL  
 
@@ -71,7 +71,7 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "School:"
+            VALUE "School: "
             RIGHTALIGN .T.
      END LABEL  
 
@@ -80,7 +80,7 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Miscellaneous:"
+            VALUE "Miscellaneous: "
             RIGHTALIGN .T.
      END LABEL  
 
@@ -89,160 +89,180 @@ DEFINE WINDOW TEMPLATE AT 88 , 1900 WIDTH 550 HEIGHT 1066
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Total:"
+            VALUE "Total: "
             RIGHTALIGN .T.
      END LABEL  
 
-     DEFINE GETBOX GetBox_1
+     DEFINE DATEPICKER Get_Date
             ROW    620
             COL    220
             WIDTH  120
             HEIGHT 24
-            VALUE 0
-            IMAGE ''
-            PICTURE ''
-            VALIDMESSAGE ''
-            MESSAGE ''
+            VALUE Date()
             FONTNAME 'Arial'
             TOOLTIP ''
-     END GETBOX  
+     END DATEPICKER 
 
-     DEFINE GETBOX GetBox_2
+     DEFINE GETBOX Get_Disc
             ROW    660
             COL    220
-            WIDTH  120
+            WIDTH  250
             HEIGHT 24
-            VALUE 0
+            VALUE ""
             IMAGE ''
-            PICTURE ''
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
      END GETBOX  
 
-     DEFINE GETBOX GetBox_3
+     DEFINE GETBOX Get_Gas
             ROW    700
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
+            ONCHANGE sumInput()
      END GETBOX  
 
-     DEFINE GETBOX GetBox_4
+     DEFINE GETBOX Get_Maint
             ROW    740
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
      END GETBOX  
 
-     DEFINE GETBOX GetBox_5
+     DEFINE GETBOX Get_John
             ROW    780
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
      END GETBOX  
 
-     DEFINE GETBOX GetBox_6
+     DEFINE GETBOX Get_Pastor
             ROW    820
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
      END GETBOX  
 
-     DEFINE GETBOX GetBox_7
+     DEFINE GETBOX Get_Med
             ROW    860
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
      END GETBOX  
 
-     DEFINE GETBOX GetBox_8
+     DEFINE GETBOX Get_School
             ROW    900
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
      END GETBOX  
 
-     DEFINE GETBOX GetBox_9
+     DEFINE GETBOX Get_Misc
             ROW    940
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
      END GETBOX  
 
-     DEFINE GETBOX GetBox_10
+     DEFINE TEXTBOX Text_total
             ROW    980
             COL    220
             WIDTH  120
             HEIGHT 24
-            VALUE 0
-            IMAGE ''
-            PICTURE ''
-            VALIDMESSAGE ''
-            MESSAGE ''
             FONTNAME 'Arial'
-            TOOLTIP ''
-     END GETBOX  
+            READONLY .T.
+            BACKCOLOR {255,255,0}
+            FONTCOLOR {0,0,0}
+            NUMERIC  .T.
+     END TEXTBOX 
 
      DEFINE FRAME Frame_1
-            ROW    590
-            COL    70
-            WIDTH  292
-            HEIGHT 432
+            ROW    610
+            COL    80
+            WIDTH  500
+            HEIGHT 400
             FONTNAME 'Arial'
             FONTBOLD .T.
-            BACKCOLOR {0,0,0}
+            BACKCOLOR {255,255,255}
+            FONTCOLOR {0,0,0}
             OPAQUE .T.
      END FRAME  
+
+     DEFINE BUTTON Button_addData
+            ROW    620
+            COL    450
+            WIDTH  100
+            HEIGHT 28
+            ACTION addData()
+            CAPTION "ADD"
+            FONTNAME 'Arial'
+            TOOLTIP ''
+            FONTBOLD .T.
+            FONTUNDERLINE .T.
+     END BUTTON  
+
+     DEFINE TBROWSE TBROWSE_1 ; 
+            AT    130,70 ; 
+            WIDTH  300 ; 
+            HEIGHT 300 ; 
+            HEADERS {'DATE','DISC','GAS','MAINT','JOHN','PASTOR','MED','SCHOOL','MISC'} ; 
+            COLSIZES 100,100,100,100,100,100 ; 
+            WORKAREA TEST ; 
+            FIELDS 'CODE','FIRST','LAST','MARRIED','BIRTH','BIO' ; 
+            FONT 'Arial' ; 
+            TOOLTIP ''
+     END TBROWSE  
 
 END WINDOW
 

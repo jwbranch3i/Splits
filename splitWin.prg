@@ -7,13 +7,16 @@ FUNCTION mainWin()
    DEFINE WINDOW SPLITS AT 90, 743 ;
       WIDTH 1522 HEIGHT 1064 ;
       TITLE "John Account Splits" ;
+      BACKCOLOR {128,255,255};
       MAIN
    
-      DEFINE TBROWSE oBrowse AT 200, 60 CELLED ALIAS "JOHNACCT" ;
-         ON CHANGE rowTotal() ;
-         EDITABLE WIDTH 1000 HEIGHT 390
+      DEFINE TBROWSE oBrowse AT 200, 60 ALIAS "JOHNACCT" CELLED ;
+         EDITABLE WIDTH 1000 HEIGHT 390 
 
-         //oBrowse:SetAppendMode(TRUE)
+         oBrowse:SetAppendMode(.T.)
+         oBrowse:SetDeleteMode( .T., .T.)
+         oBrowse:lNoResetPos := .F.
+          
 
          ADD COLUMN TO oBrowse;
             HEADER "Date" ;
@@ -100,6 +103,7 @@ FUNCTION mainWin()
             FOOTER {||getTotal("total")} ;
             NOHILITE MOVE DT_MOVE_RIGHT
 
+            MODIFY TBROWSE oBrowse INDEXCOLS TO 1
       END TBROWSE  
 
 // Input lables
@@ -108,7 +112,7 @@ FUNCTION mainWin()
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Date:"
+            VALUE "Date: "
             RIGHTALIGN .T.
       END LABEL  
 
@@ -117,7 +121,7 @@ FUNCTION mainWin()
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Description:"
+            VALUE "Description: "
             RIGHTALIGN .T.
       END LABEL  
 
@@ -126,7 +130,7 @@ FUNCTION mainWin()
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Gas:"
+            VALUE "Gas: "
             RIGHTALIGN .T.
       END LABEL  
 
@@ -135,7 +139,7 @@ FUNCTION mainWin()
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Maintenance:"
+            VALUE "Maintenance: "
             RIGHTALIGN .T.
       END LABEL  
 
@@ -144,7 +148,7 @@ FUNCTION mainWin()
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "John:"
+            VALUE "John: "
             RIGHTALIGN .T.
       END LABEL  
 
@@ -153,7 +157,7 @@ FUNCTION mainWin()
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Pastor:"
+            VALUE "Pastor: "
             RIGHTALIGN .T.
       END LABEL  
 
@@ -162,7 +166,7 @@ FUNCTION mainWin()
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Medical:"
+            VALUE "Medical: "
             RIGHTALIGN .T.
       END LABEL  
 
@@ -171,7 +175,7 @@ FUNCTION mainWin()
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "School:"
+            VALUE "School: "
             RIGHTALIGN .T.
       END LABEL  
 
@@ -180,7 +184,7 @@ FUNCTION mainWin()
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Miscellaneous:"
+            VALUE "Miscellaneous: "
             RIGHTALIGN .T.
       END LABEL  
 
@@ -189,161 +193,182 @@ FUNCTION mainWin()
             COL    90
             WIDTH  120
             HEIGHT 24
-            VALUE "Total:"
+            VALUE "Total: "
             RIGHTALIGN .T.
       END LABEL  
 
-   //get boxes
-   DEFINE GETBOX GetBox_1
+//**********************get boxes
+   DEFINE DATEPICKER Get_Date
             ROW    620
             COL    220
             WIDTH  120
             HEIGHT 24
-            VALUE 0
-            IMAGE ''
-            PICTURE ''
-            VALIDMESSAGE ''
-            MESSAGE ''
+            VALUE Date()
             FONTNAME 'Arial'
             TOOLTIP ''
-   END GETBOX  
+   END DATEPICKER 
 
-   DEFINE GETBOX GetBox_2
+
+   DEFINE GETBOX Get_Disc
             ROW    660
             COL    220
-            WIDTH  120
+            WIDTH  250
             HEIGHT 24
-            VALUE 0
+            VALUE ""
             IMAGE ''
-            PICTURE ''
+            PICTURE 'XXXXXXXXXXXXXXXXXXXXXXXXX'
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
    END GETBOX  
 
-   DEFINE GETBOX GetBox_3
+   DEFINE GETBOX Get_Gas
             ROW    700
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "@Z 99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
-   END GETBOX  
+            ONCHANGE sumInput()
+         END GETBOX  
 
-   DEFINE GETBOX GetBox_4
+   DEFINE GETBOX Get_Maint
             ROW    740
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "@Z 99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
+            ONCHANGE sumInput()
    END GETBOX  
 
-   DEFINE GETBOX GetBox_5
+   DEFINE GETBOX Get_John
             ROW    780
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "@Z 99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
+            ONCHANGE sumInput()
    END GETBOX  
 
-   DEFINE GETBOX GetBox_6
+   DEFINE GETBOX Get_Pastor
             ROW    820
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "@Z 99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
+            ONCHANGE sumInput()
    END GETBOX  
 
-   DEFINE GETBOX GetBox_7
+   DEFINE GETBOX Get_Med
             ROW    860
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "@Z 99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
+            ONCHANGE sumInput()
    END GETBOX  
 
-   DEFINE GETBOX GetBox_8
+   DEFINE GETBOX Get_School
             ROW    900
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "@Z 99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
+            ONCHANGE sumInput()
    END GETBOX  
 
-   DEFINE GETBOX GetBox_9
+   DEFINE GETBOX Get_Misc
             ROW    940
             COL    220
             WIDTH  120
             HEIGHT 24
             VALUE 0
             IMAGE ''
-            PICTURE ''
+            PICTURE "@Z 99,999.99"
             VALIDMESSAGE ''
             MESSAGE ''
             FONTNAME 'Arial'
             TOOLTIP ''
+            ONCHANGE sumInput()
    END GETBOX  
 
-   DEFINE GETBOX GetBox_10
-            ROW    980
-            COL    220
-            WIDTH  120
-            HEIGHT 24
-            VALUE 0
-            IMAGE ''
-            PICTURE ''
-            VALIDMESSAGE ''
-            MESSAGE ''
-            FONTNAME 'Arial'
-            TOOLTIP ''
-   END GETBOX  
-   
+   DEFINE TEXTBOX Text_total
+   ROW    980
+   COL    220
+   WIDTH  120
+   HEIGHT 24
+   FONTNAME 'Arial'
+   READONLY .T.
+   BACKCOLOR {255,255,0}
+   NUMERIC  .T.
+   FONTCOLOR {0,0,0}
+   NUMERIC  .T.
+END TEXTBOX 
+
+
+//*******************frame*/   
    DEFINE FRAME Frame_1
       ROW    610
-      COL    110
-      WIDTH  250
+      COL    80
+      WIDTH  500
       HEIGHT 400
       FONTNAME 'Arial'
       FONTBOLD .T.
-      BACKCOLOR {0,0,0}
+      BACKCOLOR {255,255,255}
+      FONTCOLOR {0,0,0}
       OPAQUE .T.
    END FRAME  
+
+//*******************add button*/
+   DEFINE BUTTON Button_addData
+   ROW    620
+   COL    450
+   WIDTH  100
+   HEIGHT 28
+   ACTION addData() ; oBrowse:GoBottom()
+
+   CAPTION "ADD"
+   FONTNAME 'Arial'
+   TOOLTIP ''
+   FONTBOLD .T.
+   FONTUNDERLINE .T.
+END BUTTON  
 
 END WINDOW
 
