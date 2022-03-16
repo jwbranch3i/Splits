@@ -10,12 +10,13 @@ FUNCTION mainWin()
       BACKCOLOR {128,255,255};
       MAIN
    
-      DEFINE TBROWSE oBrowse AT 200, 60 ALIAS "JOHNACCT" CELLED ;
-         EDITABLE WIDTH 1000 HEIGHT 390 
+      DEFINE TBROWSE oBrowse AT 50, 50 ALIAS "JOHNACCT";
+         WIDTH 1000 HEIGHT 390;
+         CELLED EDIT 
 
-         oBrowse:SetAppendMode(.T.)
+      //   oBrowse:SetAppendMode(.T.)
          oBrowse:SetDeleteMode( .T., .T.)
-         oBrowse:lNoResetPos := .F.
+      //  oBrowse:lNoResetPos := .F.  
           
 
          ADD COLUMN TO oBrowse;
@@ -101,7 +102,10 @@ FUNCTION mainWin()
             DATA FIELDWBLOCK("total", SELECT()) ;
             ALIGN DT_RIGHT, DT_CENTER, DT_CENTER ;
             FOOTER {||getTotal("total")} ;
+            COLORS {128,255,255};
             NOHILITE MOVE DT_MOVE_RIGHT
+
+            oBrowse:SetColor({9,10}, {RGB(255, 255, 255),RGB( 128, 128, 192)})
 
             MODIFY TBROWSE oBrowse INDEXCOLS TO 1
       END TBROWSE  
