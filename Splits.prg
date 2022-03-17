@@ -60,6 +60,9 @@ FUNCTION addData()
    ENDIF                
 RETURN   
 
+FUNCTION saveRecord()
+RETURN   
+
 FUNCTION sumInput()
    nTotal := splits.Get_Gas.VALUE + ;
             splits.Get_Maint.VALUE + ;
