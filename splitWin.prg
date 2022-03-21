@@ -10,23 +10,9 @@ FUNCTION mainWin()
       BACKCOLOR {128,255,255};
       MAIN
    
-      @570, 950 BUTTON bAddRecord
-      DEFINE BUTTON Button_addData
-      ROW    570
-      COL    950
-      WIDTH  100
-      HEIGHT 28
-      ACTION saveRecord() 
-      CAPTION "Add Record"
-      FONTNAME 'Arial'
-      TOOLTIP ''
-      FONTBOLD .T.
-      FONTUNDERLINE .T.
-END BUTTON  
-
       DEFINE TBROWSE oBrowse AT 50, 50 ALIAS "JOHNACCT";
          WIDTH 1050 HEIGHT 490;
-         CELLED EDIT 
+            CELLED EDITABLE 
 
       //   oBrowse:SetAppendMode(.T.)
          oBrowse:SetDeleteMode( .T., .T.)
@@ -120,12 +106,24 @@ END BUTTON
             NOHILITE MOVE DT_MOVE_RIGHT
 
             oBrowse:SetColor({9,10}, {RGB(255, 255, 255),RGB( 128, 128, 192)})
+            oBrowse:nHeightCell += 6
 
             MODIFY TBROWSE oBrowse INDEXCOLS TO 1
       END TBROWSE  
 
-// Input lables
-
+      DEFINE BUTTON bAddRecord
+         ROW    570
+         COL    950
+         WIDTH  100
+         HEIGHT 28
+//         ACTION saveRecord() ; oBrowse:reset() ; oBrowse:GoBottom()
+         ACTION saveRecord() ; oBrowse:reset(); oBrowse:DrawSelect(); oBrowse:GoBottom()
+         CAPTION "Add Record"
+         FONTNAME 'Arial'
+         TOOLTIP ''
+         FONTBOLD .T.
+         FONTUNDERLINE .T.
+      END BUTTON  
 
 END WINDOW
 

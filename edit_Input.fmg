@@ -1,7 +1,7 @@
 *HMGS-MINIGUI-IDE Two-Way Form Designer Generated Code
 *OPEN SOURCE PROJECT 2005-2015 Walter Formigoni http://sourceforge.net/projects/hmgs-minigui/
 
-DEFINE WINDOW TEMPLATE AT 380 , 595 WIDTH 624 HEIGHT 493 BACKCOLOR {128,255,255}
+DEFINE WINDOW TEMPLATE AT 90 , 378 WIDTH 624 HEIGHT 493 BACKCOLOR {128,255,255}
 
      DEFINE LABEL Label_Date
             ROW    30
@@ -267,10 +267,11 @@ DEFINE WINDOW TEMPLATE AT 380 , 595 WIDTH 624 HEIGHT 493 BACKCOLOR {128,255,255}
             WIDTH  120
             HEIGHT 24
             FONTNAME 'Arial'
+            FONTSIZE 11
             READONLY .T.
             BACKCOLOR {255,255,0}
             FONTCOLOR {0,0,0}
-            FONTSIZE 11
+            PICTURE "@Z 99,999.99"
             NUMERIC  .T.
      END TEXTBOX 
 
@@ -291,7 +292,7 @@ DEFINE WINDOW TEMPLATE AT 380 , 595 WIDTH 624 HEIGHT 493 BACKCOLOR {128,255,255}
             COL    440
             WIDTH  100
             HEIGHT 28
-            ACTION addData() ; oBrowse:GoBottom()
+            ACTION addData()
             CAPTION "SAVE"
             FONTNAME 'Arial'
             TOOLTIP ''
