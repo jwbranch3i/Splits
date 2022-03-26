@@ -1,0 +1,39 @@
+*HMGS-MINIGUI-IDE Two-Way Form Designer Generated Code
+*OPEN SOURCE PROJECT 2005-2015 Walter Formigoni http://sourceforge.net/projects/hmgs-minigui/
+
+DEFINE WINDOW TEMPLATE AT 97 , 370 WIDTH 1150 HEIGHT 743 BACKCOLOR {128,255,255}
+
+     DEFINE BROWSE J_Browse
+            ROW    50
+            COL    50
+            WIDTH  1050
+            HEIGHT 490
+            HEADERS {'DATE','DISCRIP','GAS','MAINT','JOHN','PASTOR','MED','SCHOOL','MISC','TOTAL'}
+            WIDTHS {120,250,80,80,80,90,80,90,80,90}
+            FIELDS {'JOHNACCT->DATE','JOHNACCT->DISCRIP','JOHNACCT->GAS','JOHNACCT->MAINT','JOHNACCT->JOHN','JOHNACCT->PASTOR','JOHNACCT->MED','JOHNACCT->SCHOOL','JOHNACCT->MISC','JOHNACCT->TOTAL'}
+            WORKAREA JOHNACCT
+            BACKCOLOR NIL
+            FONTCOLOR {255,255,255}
+            ALLOWEDIT .T.
+            ALLOWAPPEND .T.
+            PAINTDOUBLEBUFFER .F.
+            ALLOWDELETE .T.
+            JUSTIFY ajustify
+     END BROWSE  
+
+     DEFINE BUTTON bAddRecord
+            ROW    570
+            COL    950
+            WIDTH  100
+            HEIGHT 28
+            ACTION saveRecord();
+            CAPTION "Add Record"
+            FONTNAME 'Arial'
+            TOOLTIP ''
+            FONTBOLD .T.
+            FONTUNDERLINE .T.
+     END BUTTON  
+
+END WINDOW
+
+
