@@ -16,7 +16,7 @@ public class AcctData
 {
 
 	public static final String DB_NAME = "accounts.db";
-	public static final String CONNECTION_STRING = "jdbc:sqlite:D:/JavaWork/AcctBreakDown/"
+	public static final String CONNECTION_STRING = "jdbc:sqlite:D:/Splits/splits/"
 					+ DB_NAME;
 
 	/* table - transactions */
@@ -64,6 +64,11 @@ public class AcctData
 	public static AcctData getInstance()
 	{
 		return instance;
+	}
+
+	public Connection returnConn()
+	{
+		return conn;
 	}
 
 	/****************************************/
@@ -174,12 +179,15 @@ public class AcctData
 		}
 		System.out.println(sb + "acctData 175");
 
-		try (
-			Statement statement = conn.createStatement();
-			ResultSet results = statement.executeQuery(sb.toString())
-		)
+		try
 		{
-			System.out.println("here 182");
+			// Statement statement = conn.createStatement();
+			System.out.println("before");
+			System.out.println(conn.toString());
+			Statement statement = conn.createStatement();
+			System.out.println("after");
+			ResultSet results = statement.executeQuery(sb.toString());
+
 			List<Transaction> list = new ArrayList<Transaction>();
 			while (results.next())
 			{
@@ -195,13 +203,13 @@ public class AcctData
 				transaction.setSchool(results.getDouble(INDEX_TRANSACTIONS_SCHOOL));
 				transaction.setMisc(results.getDouble(INDEX_TRANSACTIONS_MISC));
 
-				System.out.println(transaction.toString());
-
 				list.add(transaction);
 			}
 			return list;
 		}
-		catch (SQLException e)
+		catch (
+
+		SQLException e)
 		{
 			System.out.println("Query failed: " + e.getMessage());
 			return null;
