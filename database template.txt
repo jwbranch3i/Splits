@@ -13,9 +13,12 @@ CREATE TABLE Account (
 CREATE TABLE Transactions (
 	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	Date TEXT NOT NULL,
-	Description_FK INTEGER NOT NULL,
-	Account_FK INTEGER NOT NULL,
-	CONSTRAINT Descriptions_FK FOREIGN KEY (id) REFERENCES Descriptions(id),
-	CONSTRAINT Account_FK FOREIGN KEY (id) REFERENCES Account(id)
+	Discription TEXT,
+	Gas NUMERIC,
+	Service NUMERIC,
+	John NUMERIC,
+	Medical NUMERIC,
+	Misc NUMERIC,
+	Tax NUMERIC,
+	Savings NUMERIC,
 );
-
