@@ -17,9 +17,7 @@ public class Transaction
 	private SimpleDoubleProperty gas = new SimpleDoubleProperty(0.0);
 	private SimpleDoubleProperty service = new SimpleDoubleProperty(0.0);
 	private SimpleDoubleProperty john = new SimpleDoubleProperty(0.0);
-	private SimpleDoubleProperty pastor = new SimpleDoubleProperty(0.0);
-	private SimpleDoubleProperty med = new SimpleDoubleProperty(0.0);
-	private SimpleDoubleProperty school = new SimpleDoubleProperty(0.0);
+	private SimpleDoubleProperty medical = new SimpleDoubleProperty(0.0);
 	private SimpleDoubleProperty misc = new SimpleDoubleProperty(0.0);
 
 	private SimpleDoubleProperty tax = new SimpleDoubleProperty(0.0);
@@ -139,74 +137,26 @@ public class Transaction
 	}
 
 	// ----------------------------------------
-	public double getDoublePastor()
+	public double getDoubleMedical()
 	{
-		return pastor.get();
+		return medical.get();
 	}
 
-	public String getPastor()
+	public String getMedical()
 	{
-		if (pastor.get() == 0.)
+		if (medical.get() == 0.)
 		{
 			return "";
 		}
 		else
 		{
-			return String.format("%.2f", pastor.get());
+			return String.format("%.2f", medical.get());
 		}
 	}
 
-	public void setPastor(double pastor)
+	public void setMedical(double med)
 	{
-		this.pastor.set(pastor);
-		addTotal();
-	}
-
-	// ----------------------------------------
-	public double getDoubleMed()
-	{
-		return med.get();
-	}
-
-	public String getMed()
-	{
-		if (med.get() == 0.)
-		{
-			return "";
-		}
-		else
-		{
-			return String.format("%.2f", med.get());
-		}
-	}
-
-	public void setMed(double med)
-	{
-		this.med.set(med);
-		addTotal();
-	}
-
-	// ----------------------------------------
-	public double getDoubleSchool()
-	{
-		return school.get();
-	}
-
-	public String getSchool()
-	{
-		if (school.get() == 0.)
-		{
-			return "";
-		}
-		else
-		{
-			return String.format("%.2f", school.get());
-		}
-	}
-
-	public void setSchool(double school)
-	{
-		this.school.set(school);
+		this.medical.set(med);
 		addTotal();
 	}
 
@@ -307,9 +257,9 @@ public class Transaction
 
 	private void addTotal()
 	{
-		transactionTotal.set(gas.get()
-						+ service.get() + john.get() + pastor.get() + med.get()
-						+ school.get() + misc.get() + tax.get() + saving.get());
+		setTransactionTotal(getDoubleGas()
+						+ getDoubleService() + getDoubleJohn() + getDoubleMedical()
+						+ getDoubleMisc() + getDoubleTax() + getDoubleSavings());
 	}
 
 	@Override
@@ -318,10 +268,9 @@ public class Transaction
 		return "Transaction [_id="
 						+ _id + ", \ntransactionDate=" + transactionDate
 						+ ", \ndiscription=" + discription + ", \ngas=" + gas
-						+ ", \nservice=" + service + ", \njohn=" + john + ", \npastor="
-						+ pastor + ", \nmed=" + med + ", \nschool=" + school + ", \nmisc="
-						+ misc + ", \ntax=" + tax + ", \nsaving=" + saving
-						+ ", \ntransactionTotal=" + transactionTotal + "]";
+						+ ", \nservice=" + service + ", \njohn=" + john + ", \nmed="
+						+ medical + ", \nmisc=" + misc + ", \ntax=" + tax + ", \nsaving="
+						+ saving + ", \ntransactionTotal=" + transactionTotal + "]";
 	}
 
 }
