@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -159,15 +158,17 @@ public class AcctData
 		try 
 		{
 			System.out.println(sb.toString());
+			
 			Statement statement = conn.createStatement();
 			ResultSet results = statement.executeQuery(sb.toString());
-			System.out.println("***after");
 			List<Transaction> list = new ArrayList<Transaction>();
+			
+			System.out.println("***before");
 			while (results.next())
 			{
 				Transaction transaction = new Transaction();
 				transaction.set_id(results.getInt(INDEX_TRANSACTIONS_ID));
-				transaction.setTransactionDate(LocalDate.parse(results.getString(INDEX_TRANSACTIONS_DATE)));
+//				transaction.setTransactionDate(LocalDate.parse(results.getString(INDEX_TRANSACTIONS_DATE)));
 				transaction.setDiscription(results.getString(INDEX_TRANSACTIONS_DISCRIPTION));
 				transaction.setGas(results.getDouble(INDEX_TRANSACTIONS_GAS));
 				transaction.setService(results.getDouble(INDEX_TRANSACTIONS_SERVICE));
@@ -177,6 +178,7 @@ public class AcctData
 
 				list.add(transaction);
 			}
+			System.out.println("***after");
 			System.out.println(list.toString());
 			return list;
 		}

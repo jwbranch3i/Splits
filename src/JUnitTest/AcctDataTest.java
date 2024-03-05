@@ -14,6 +14,7 @@ import org.junit.Test;
 
 import dataModel.AcctData;
 import dataModel.Transaction;
+import javafx.application.Platform;
 
 /**
  * 
@@ -60,15 +61,25 @@ public class AcctDataTest
 	public void testQueryTransactions()
 	{
 		List<Transaction> list = new ArrayList<Transaction>();
-
+		
+        if(!AcctData.getInstance().open()) {
+            System.out.println("FATAL ERROR: Couldn't connect to database");
+            Platform.exit();
+        }
+		
 		list = AcctData.getInstance().queryTransactions(3);
 		
 		int i = 0;
-		while (list.size() > i)
+		int max = list.size();
+		
+		while (i < max)
 		{
 			Transaction temp = list.get(i);
 			System.out.println(temp.toString());
+			i++;
 		}
+		
+		AcctData.getInstance().close();
 	}
 }
 
