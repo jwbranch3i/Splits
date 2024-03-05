@@ -1,12 +1,15 @@
 package application;
 
+
+import dataModel.AcctData;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Splits extends Application
+public class Main extends Application
 {
 	@Override
 	public void start(Stage primaryStage)
@@ -28,6 +31,21 @@ public class Splits extends Application
 			e.printStackTrace();
 		}
 	}
+
+    @Override
+    public void init() throws Exception {
+        super.init();
+        if(!AcctData.getInstance().open()) {
+            System.out.println("FATAL ERROR: Couldn't connect to database");
+            Platform.exit();
+        }
+    }
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
+        AcctData.getInstance().close();
+    }
 
 	public static void main(String[] args)
 	{

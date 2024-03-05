@@ -138,7 +138,7 @@ public class AcctData
 	public List<Transaction> queryTransactions(int sortOrder)
 	{
 		StringBuilder sb = new StringBuilder("SELECT ");
-		sb.append("_id, date, discription, gas, service,john, pastor, med, school, misc  FROM ");
+		sb.append("_id, date, discription, gas, service, john, medical, misc  FROM ");
 		sb.append(TABLE_TRANSACTIONS);
 		if (sortOrder != ORDER_BY_NONE)
 			;
@@ -154,10 +154,11 @@ public class AcctData
 				sb.append(" ASC");
 			}
 		}
-		System.out.println(sb + "acctData 175");
-		System.out.println("***here");
+		
+		
 		try 
 		{
+			System.out.println(sb.toString());
 			Statement statement = conn.createStatement();
 			ResultSet results = statement.executeQuery(sb.toString());
 			System.out.println("***after");
@@ -176,6 +177,7 @@ public class AcctData
 
 				list.add(transaction);
 			}
+			System.out.println(list.toString());
 			return list;
 		}
 		catch (
