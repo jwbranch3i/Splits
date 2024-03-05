@@ -27,13 +27,10 @@ public class AcctData
 	public static final String COL_TRANSACTIONS_GAS = "gas";
 	public static final String COL_TRANSACTIONS_SERVICE = "service";
 	public static final String COL_TRANSACTIONS_JOHN = "john";
-	public static final String COL_TRANSACTIONS_PASTOR = "pastor";
-	public static final String COL_TRANSACTIONS_MED = "med";
-	public static final String COL_TRANSACTIONS_SCHOOL = "school";
+	public static final String COL_TRANSACTIONS_MED = "medical";
 	public static final String COL_TRANSACTIONS_MISC = "misc";
 	public static final String COL_TRANSACTIONS_TAX = "tax";
 	public static final String COL_TRANSACTIONS_SAVINGS = "savings";
-	public static final String COL_TRANSACTIONS_SAVINGS_OTHER = "savings_other";
 
 	public static final int INDEX_TRANSACTIONS_ID = 1;
 	public static final int INDEX_TRANSACTIONS_DATE = 2;
@@ -41,13 +38,10 @@ public class AcctData
 	public static final int INDEX_TRANSACTIONS_GAS = 4;
 	public static final int INDEX_TRANSACTIONS_SERVICE = 5;
 	public static final int INDEX_TRANSACTIONS_JOHN = 6;
-	public static final int INDEX_TRANSACTIONS_PASTOR = 7;
-	public static final int INDEX_TRANSACTIONS_MED = 8;
-	public static final int INDEX_TRANSACTIONS_SCHOOL = 9;
-	public static final int INDEX_TRANSACTIONS_MISC = 10;
-	public static final int INDEX_TRANSACTIONS_TAX = 11;
-	public static final int INDEX_TRANSACTIONS_SAVINGS = 12;
-	public static final int INDEX_TRANSACTIONS_SAVINGS_OTHER = 13;
+	public static final int INDEX_TRANSACTIONS_MEDICAL = 7;
+	public static final int INDEX_TRANSACTIONS_MISC = 8;
+	public static final int INDEX_TRANSACTIONS_TAX = 9;
+	public static final int INDEX_TRANSACTIONS_SAVINGS = 10;
 
 	public static final int ORDER_BY_NONE = 1;
 	public static final int ORDER_BY_ASC = 2;
@@ -64,11 +58,6 @@ public class AcctData
 	public static AcctData getInstance()
 	{
 		return instance;
-	}
-
-	public Connection returnConn()
-	{
-		return conn;
 	}
 
 	/****************************************/
@@ -107,9 +96,7 @@ public class AcctData
 	private double totalGas = 0.0;
 	private double totalService = 0.0;
 	private double totalJohn = 0.0;
-	private double totalPastor = 0.0;
-	private double totalMed = 0.0;
-	private double totalSchool = 0.0;
+	private double totalMedical = 0.0;
 	private double totalMisc = 0.0;
 	private double totalAcct = 0.0;
 
@@ -133,19 +120,9 @@ public class AcctData
 		return totalJohn;
 	}
 
-	public double getTotalPastor()
-	{
-		return totalPastor;
-	}
-
 	public double getTotalMed()
 	{
-		return totalMed;
-	}
-
-	public double getTotalSchool()
-	{
-		return totalSchool;
+		return totalMedical;
 	}
 
 	public double getTotalMisc()
@@ -178,16 +155,12 @@ public class AcctData
 			}
 		}
 		System.out.println(sb + "acctData 175");
-
-		try
+		System.out.println("***here");
+		try 
 		{
-			// Statement statement = conn.createStatement();
-			System.out.println("before");
-			System.out.println(conn.toString());
 			Statement statement = conn.createStatement();
-			System.out.println("after");
 			ResultSet results = statement.executeQuery(sb.toString());
-
+			System.out.println("***after");
 			List<Transaction> list = new ArrayList<Transaction>();
 			while (results.next())
 			{
@@ -198,9 +171,7 @@ public class AcctData
 				transaction.setGas(results.getDouble(INDEX_TRANSACTIONS_GAS));
 				transaction.setService(results.getDouble(INDEX_TRANSACTIONS_SERVICE));
 				transaction.setJohn(results.getDouble(INDEX_TRANSACTIONS_JOHN));
-				transaction.setPastor(results.getDouble(INDEX_TRANSACTIONS_PASTOR));
-				transaction.setMed(results.getDouble(INDEX_TRANSACTIONS_MED));
-				transaction.setSchool(results.getDouble(INDEX_TRANSACTIONS_SCHOOL));
+				transaction.setMedical(results.getDouble(INDEX_TRANSACTIONS_MEDICAL));
 				transaction.setMisc(results.getDouble(INDEX_TRANSACTIONS_MISC));
 
 				list.add(transaction);
@@ -221,15 +192,11 @@ public class AcctData
 		totalGas += transaction.getDoubleGas();
 		totalService += transaction.getDoubleService();
 		totalJohn += transaction.getDoubleJohn();
-		totalPastor += transaction.getDoublePastor();
-		totalMed += transaction.getDoubleMed();
-		totalSchool += transaction.getDoubleSchool();
+		totalMedical += transaction.getDoubleMedical();
 		totalMisc += transaction.getDoubleMisc();
 
 		totalAcct = 0.00;
-		totalAcct = totalGas
-						+ totalService + totalJohn + totalPastor + totalMed + totalSchool
-						+ totalMisc;
+		totalAcct = totalGas + totalService + totalJohn + totalMedical + totalMisc;
 
 	}
 

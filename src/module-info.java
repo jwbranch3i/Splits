@@ -5,6 +5,7 @@ module Splits
 	requires javafx.fxml;
 	requires java.sql;
 	requires junit;
+	requires javafx.base;
 
 	opens application to javafx.graphics, javafx.fxml;
 }

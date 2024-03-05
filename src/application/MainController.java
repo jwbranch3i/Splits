@@ -99,14 +99,8 @@ public class MainController
 		colJohn.setCellValueFactory(new PropertyValueFactory<Transaction, String>("john"));
 		colJohn.setStyle("-fx-alignment: CENTER-RIGHT");
 
-		colPastor.setCellValueFactory(new PropertyValueFactory<Transaction, String>("pastor"));
-		colPastor.setStyle("-fx-alignment: CENTER-RIGHT");
-
-		colMed.setCellValueFactory(new PropertyValueFactory<Transaction, String>("med"));
+		colMed.setCellValueFactory(new PropertyValueFactory<Transaction, String>("medical"));
 		colMed.setStyle("-fx-alignment: CENTER-RIGHT");
-
-		colSchool.setCellValueFactory(new PropertyValueFactory<Transaction, String>("school"));
-		colSchool.setStyle("-fx-alignment: CENTER-RIGHT");
 
 		colMisc.setCellValueFactory(new PropertyValueFactory<Transaction, String>("misc"));
 		colMisc.setStyle("-fx-alignment: CENTER-RIGHT");
